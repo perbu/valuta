@@ -11,9 +11,9 @@ use utf8;
 
 sub version {
     print <<EOT;
-Valuta version 0.07
+Valuta version 0.08
 Looks up exchange rates for currencies.
-Copyright (c) 2001,2006,2008,2010 Per Andreas Buer
+Copyright (c) 2001,2006,2008,2010,2015 Per Buer
 Contributions by Kjetil Torgrim Homme 2010, 2015
 
 This program is free software: you can redistribute it and/or modify
@@ -43,8 +43,8 @@ if (defined $PARM_antall && $PARM_antall !~ /^[0-9.]+$/) {
 $PARM_valuta = uc $PARM_valuta
     if defined $PARM_valuta;
 
-my %VALUTA = 
-    get_valhash('http://www.dnbnor.no/portalfront/datafiles/miscellaneous/csv/kursliste.csv');
+my %VALUTA =
+    get_valhash('https://www.dnb.no/portalfront/datafiles/miscellaneous/csv/kursliste.csv');
 
 if ($PARM_antall) {
     unless (defined $VALUTA{$PARM_valuta} ) {
