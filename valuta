@@ -9,6 +9,8 @@ use Getopt::Long;
 use open OUT => ":locale";
 use utf8;
 
+$ENV{'PERL_LWP_SSL_VERIFY_HOSTNAME'} = 0;
+
 sub version {
     print <<EOT;
 Valuta version 0.08
